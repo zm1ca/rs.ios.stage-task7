@@ -10,9 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="SF-Pro-Text-Bold.otf">
-            <string>SFProText-Bold</string>
-        </array>
         <array key="SF-Pro-Text-Semibold.otf">
             <string>SFProText-Semibold</string>
         </array>
@@ -23,6 +20,7 @@
                 <outlet property="authButton" destination="Ir9-z8-30g" id="hkp-1U-cPn"/>
                 <outlet property="loginTextField" destination="xn9-v3-iU3" id="yGW-Hd-tr5"/>
                 <outlet property="passwordTextField" destination="GNm-5E-Any" id="fIN-JJ-c1g"/>
+                <outlet property="resultLabel" destination="jje-Gs-8oz" id="SRc-L0-hBm"/>
                 <outlet property="secureView" destination="aQw-XO-4QC" id="tPH-Eo-c0P"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -33,8 +31,8 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RSSchool" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksB-E5-r5S">
-                    <rect key="frame" x="101" y="80" width="173" height="43"/>
-                    <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="36"/>
+                    <rect key="frame" x="111.5" y="80" width="162.5" height="43"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                     <color key="textColor" name="Black"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -61,25 +59,92 @@
                         <action selector="editingChanged:" destination="-1" eventType="editingChanged" id="egw-b7-uu7"/>
                     </connections>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ir9-z8-30g" customClass="RSButton">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ir9-z8-30g" customClass="RSAuthButton">
                     <rect key="frame" x="109" y="398" width="156" height="42"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="42" id="k5u-fD-9Hx"/>
                         <constraint firstAttribute="width" constant="156" id="wvC-Fg-8qr"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="20"/>
-                    <state key="normal" title="Authorise">
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                    <state key="normal" title="Authorize" image="person">
                         <color key="titleColor" name="Little Boy Blue"/>
                     </state>
+                    <state key="highlighted">
+                        <color key="titleColor" red="0.50196078431372548" green="0.64313725490196072" blue="0.92941176470588238" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                    </state>
                     <connections>
-                        <action selector="authoriseButtonTapped:" destination="-1" eventType="touchUpInside" id="mng-Rd-jYp"/>
+                        <action selector="authorizeButtonTapped:" destination="-1" eventType="touchUpInside" id="mng-Rd-jYp"/>
                     </connections>
                 </button>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aQw-XO-4QC">
                     <rect key="frame" x="69.5" y="507" width="236" height="110"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="18" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jje-Gs-8oz">
+                            <rect key="frame" x="80.5" y="15" width="75" height="21.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="75" id="PgA-dV-S9b"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                            <color key="textColor" name="Black"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uH7-zf-QtK">
+                            <rect key="frame" x="23" y="45" width="190" height="50"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pF7-Kp-Uxf" customClass="RSSecureButton">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="50" id="DHn-UH-gAB"/>
+                                        <constraint firstAttribute="height" constant="50" id="G3A-AN-a7b"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="24"/>
+                                    <state key="normal" title="1">
+                                        <color key="titleColor" name="Little Boy Blue"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="secureButtonTapped:" destination="-1" eventType="touchUpInside" id="Qdl-tY-jWZ"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sha-mz-qiM" customClass="RSSecureButton">
+                                    <rect key="frame" x="70" y="0.0" width="50" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="RTa-or-Ham"/>
+                                        <constraint firstAttribute="width" constant="50" id="UNW-uf-y5D"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="24"/>
+                                    <state key="normal" title="2">
+                                        <color key="titleColor" name="Little Boy Blue"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="secureButtonTapped:" destination="-1" eventType="touchUpInside" id="UIQ-1v-n9e"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17r-bZ-bGp" customClass="RSSecureButton">
+                                    <rect key="frame" x="140" y="0.0" width="50" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="2go-Y5-Ohu"/>
+                                        <constraint firstAttribute="width" constant="50" id="KUb-5X-mU2"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="24"/>
+                                    <state key="normal" title="3">
+                                        <color key="titleColor" name="Little Boy Blue"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="secureButtonTapped:" destination="-1" eventType="touchUpInside" id="4YC-1Y-nek"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemGray6Color"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="110" id="Axa-zz-XLQ"/>
+                        <constraint firstAttribute="height" constant="110" id="2CM-PX-8hA"/>
+                        <constraint firstItem="uH7-zf-QtK" firstAttribute="top" secondItem="aQw-XO-4QC" secondAttribute="top" constant="45" id="6JP-qs-7Jb"/>
+                        <constraint firstItem="uH7-zf-QtK" firstAttribute="leading" secondItem="aQw-XO-4QC" secondAttribute="leading" constant="23" id="GdA-HC-ao4"/>
+                        <constraint firstAttribute="bottom" secondItem="uH7-zf-QtK" secondAttribute="bottom" constant="15" id="SSx-VL-8JQ"/>
+                        <constraint firstAttribute="trailing" secondItem="uH7-zf-QtK" secondAttribute="trailing" constant="23" id="VQV-7b-tTc"/>
+                        <constraint firstItem="jje-Gs-8oz" firstAttribute="centerX" secondItem="aQw-XO-4QC" secondAttribute="centerX" id="cMD-Cc-T3o"/>
+                        <constraint firstItem="jje-Gs-8oz" firstAttribute="top" secondItem="aQw-XO-4QC" secondAttribute="top" constant="15" id="vPj-fN-go8"/>
                         <constraint firstAttribute="width" constant="236" id="zqK-45-uTz"/>
                     </constraints>
                 </view>
@@ -98,10 +163,11 @@
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="ksB-E5-r5S" secondAttribute="trailing" constant="101" id="sMg-U2-2Yl"/>
                 <constraint firstItem="aQw-XO-4QC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xfO-6G-lBJ"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="129"/>
+            <point key="canvasLocation" x="138.40000000000001" y="128.18590704647679"/>
         </view>
     </objects>
     <resources>
+        <image name="person" width="22.333333969116211" height="22.333333969116211"/>
         <namedColor name="Black">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

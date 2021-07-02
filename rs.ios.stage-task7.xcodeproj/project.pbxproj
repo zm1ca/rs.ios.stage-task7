@@ -15,7 +15,8 @@
 		4052B9A0268EF05100F0EC20 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4052B99E268EF05100F0EC20 /* LoginViewController.xib */; };
 		4052B9BD268EF5C200F0EC20 /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4052B9AB268EF5C100F0EC20 /* SF-Pro-Text-Bold.otf */; };
 		4052B9D4268EFD4900F0EC20 /* RSTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4052B9D3268EFD4900F0EC20 /* RSTextField.m */; };
-		4052B9D9268F02EA00F0EC20 /* RSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4052B9D8268F02EA00F0EC20 /* RSButton.m */; };
+		4052B9D9268F02EA00F0EC20 /* RSAuthButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4052B9D8268F02EA00F0EC20 /* RSAuthButton.m */; };
+		4052B9DE268F1BB900F0EC20 /* RSSecureButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4052B9DD268F1BB900F0EC20 /* RSSecureButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,8 +34,10 @@
 		4052B9C7268EF8E900F0EC20 /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
 		4052B9D2268EFD4900F0EC20 /* RSTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSTextField.h; sourceTree = "<group>"; };
 		4052B9D3268EFD4900F0EC20 /* RSTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSTextField.m; sourceTree = "<group>"; };
-		4052B9D7268F02EA00F0EC20 /* RSButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSButton.h; sourceTree = "<group>"; };
-		4052B9D8268F02EA00F0EC20 /* RSButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSButton.m; sourceTree = "<group>"; };
+		4052B9D7268F02EA00F0EC20 /* RSAuthButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSAuthButton.h; sourceTree = "<group>"; };
+		4052B9D8268F02EA00F0EC20 /* RSAuthButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSAuthButton.m; sourceTree = "<group>"; };
+		4052B9DC268F1BB900F0EC20 /* RSSecureButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSSecureButton.h; sourceTree = "<group>"; };
+		4052B9DD268F1BB900F0EC20 /* RSSecureButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSSecureButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +113,8 @@
 		4052B9D1268EFD3700F0EC20 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				4052B9D6268F02DE00F0EC20 /* RSButton */,
+				4052B9DB268F1BA300F0EC20 /* RSSecureButton */,
+				4052B9D6268F02DE00F0EC20 /* RSAuthButton */,
 				4052B9D5268F02D700F0EC20 /* RSTextField */,
 			);
 			path = "Custom Views";
@@ -125,13 +129,22 @@
 			path = RSTextField;
 			sourceTree = "<group>";
 		};
-		4052B9D6268F02DE00F0EC20 /* RSButton */ = {
+		4052B9D6268F02DE00F0EC20 /* RSAuthButton */ = {
 			isa = PBXGroup;
 			children = (
-				4052B9D7268F02EA00F0EC20 /* RSButton.h */,
-				4052B9D8268F02EA00F0EC20 /* RSButton.m */,
+				4052B9D7268F02EA00F0EC20 /* RSAuthButton.h */,
+				4052B9D8268F02EA00F0EC20 /* RSAuthButton.m */,
 			);
-			path = RSButton;
+			path = RSAuthButton;
+			sourceTree = "<group>";
+		};
+		4052B9DB268F1BA300F0EC20 /* RSSecureButton */ = {
+			isa = PBXGroup;
+			children = (
+				4052B9DC268F1BB900F0EC20 /* RSSecureButton.h */,
+				4052B9DD268F1BB900F0EC20 /* RSSecureButton.m */,
+			);
+			path = RSSecureButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,9 +217,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4052B9D9268F02EA00F0EC20 /* RSButton.m in Sources */,
+				4052B9D9268F02EA00F0EC20 /* RSAuthButton.m in Sources */,
 				4052B978268EE15200F0EC20 /* AppDelegate.m in Sources */,
 				4052B989268EE15400F0EC20 /* main.m in Sources */,
+				4052B9DE268F1BB900F0EC20 /* RSSecureButton.m in Sources */,
 				4052B9D4268EFD4900F0EC20 /* RSTextField.m in Sources */,
 				4052B99F268EF05100F0EC20 /* LoginViewController.m in Sources */,
 			);

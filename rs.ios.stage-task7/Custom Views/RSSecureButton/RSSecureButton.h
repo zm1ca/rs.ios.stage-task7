@@ -1,5 +1,5 @@
 //
-//  RSButton.h
+//  RSSecureButton.h
 //  rs.ios.stage-task7
 //
 //  Created by Źmicier Fiedčanka on 2.07.21.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RSButton : UIButton
+@interface RSSecureButton : UIButton
 
 @end
 
