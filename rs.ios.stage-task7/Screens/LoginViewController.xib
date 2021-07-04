@@ -167,7 +167,7 @@
         </view>
     </objects>
     <resources>
-        <image name="person" width="22.333333969116211" height="22.333333969116211"/>
+        <image name="person" width="16" height="16"/>
         <namedColor name="Black">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

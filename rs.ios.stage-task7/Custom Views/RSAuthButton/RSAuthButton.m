@@ -18,6 +18,7 @@
     [self.layer setBorderColor:[UIColor colorNamed:@"Little Boy Blue"].CGColor];
     [self.layer setBorderWidth:2];
     [self.layer setCornerRadius:10];
+    self.clipsToBounds = YES;
 }
 
 - (void)setHighlighted:(BOOL)highlighted {
