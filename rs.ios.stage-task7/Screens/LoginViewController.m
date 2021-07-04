@@ -140,6 +140,8 @@
     [self.enteredValues removeAllObjects];
     [self.authButton setEnabled:YES];
     [self.authButton setAlpha:1];
+    [self.resultLabel setText:@"_"];
+    [self.secureView.layer setBorderColor:[UIColor clearColor].CGColor];
 }
 
 @end
