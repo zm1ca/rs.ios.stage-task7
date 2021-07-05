@@ -44,7 +44,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="username"/>
                     <connections>
-                        <action selector="editingChanged:" destination="-1" eventType="editingChanged" id="M0T-hm-jpF"/>
+                        <action selector="editingDidBegin:" destination="-1" eventType="editingDidBegin" id="snm-af-4xx"/>
                     </connections>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GNm-5E-Any" customClass="RSTextField">
@@ -56,7 +56,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                     <connections>
-                        <action selector="editingChanged:" destination="-1" eventType="editingChanged" id="egw-b7-uu7"/>
+                        <action selector="editingDidBegin:" destination="-1" eventType="editingDidBegin" id="DEW-MK-Rmx"/>
                     </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ir9-z8-30g" customClass="RSAuthButton">
@@ -73,7 +73,7 @@
                         <color key="titleColor" red="0.50196078431372548" green="0.64313725490196072" blue="0.92941176470588238" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
-                        <action selector="authorizeButtonTapped:" destination="-1" eventType="touchUpInside" id="mng-Rd-jYp"/>
+                        <action selector="loginButtonTapped:forEvent:" destination="-1" eventType="touchUpInside" id="eIg-SU-gWg"/>
                     </connections>
                 </button>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aQw-XO-4QC">

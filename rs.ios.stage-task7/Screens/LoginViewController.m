@@ -49,7 +49,7 @@
     [self.secureView setBackgroundColor:[UIColor whiteColor]];
 }
 
-- (IBAction)editingChanged:(RSTextField *)sender {
+- (IBAction)editingDidBegin:(RSTextField *)sender {
     [sender setState:@"ready"];
 }
 
@@ -70,8 +70,15 @@
 
 
 //MARK: Authorize
-- (IBAction)authorizeButtonTapped:(id)sender {
-    [self authorize];
+- (IBAction)loginButtonTapped:(UIButton *)sender forEvent:(UIEvent *)event {
+    CGPoint touchLocation = [[[event allTouches] anyObject] locationInView:sender];
+    
+    if (CGRectContainsPoint(sender.bounds, touchLocation)) {
+        [self authorize];
+        return;
+    } else {
+        return;
+    }
 }
 
 - (void) authorize {
