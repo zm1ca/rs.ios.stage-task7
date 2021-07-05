@@ -71,14 +71,12 @@
 
 //MARK: Authorize
 - (IBAction)loginButtonTapped:(UIButton *)sender forEvent:(UIEvent *)event {
+    [self hideKeyboard];
     CGPoint touchLocation = [[[event allTouches] anyObject] locationInView:sender];
-    
     if (CGRectContainsPoint(sender.bounds, touchLocation)) {
         [self authorize];
-        return;
-    } else {
-        return;
     }
+    return;
 }
 
 - (void) authorize {
