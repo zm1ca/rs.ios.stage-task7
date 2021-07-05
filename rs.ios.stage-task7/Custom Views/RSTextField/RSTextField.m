@@ -27,8 +27,6 @@
         [self setAlpha:1];
     } else if ([state isEqualToString:@"success"]) {
         [self.layer setBorderColor:[UIColor colorNamed:@"Turquoise Green"].CGColor];
-        [self setEnabled:NO];
-        [self setAlpha:0.5];
     } else if ([state isEqualToString:@"error"]) {
         [self.layer setBorderColor:[UIColor colorNamed:@"Venetian Red"].CGColor];
     } else {

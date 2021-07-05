@@ -84,19 +84,26 @@
     BOOL passwordIsCorrect      = [self.passwordTextField.text isEqualToString:@"password"];
     BOOL credentialsAreCorrect  = loginIsCorrect && passwordIsCorrect;
     
-    if (credentialsAreCorrect) {
+    if (loginIsCorrect) {
         [self.loginTextField setState:@"success"];
+    } else {
+        [self.loginTextField setState:@"error"];
+    }
+    
+    if (passwordIsCorrect) {
         [self.passwordTextField setState:@"success"];
+    } else {
+        [self.passwordTextField setState:@"error"];
+    }
+    
+    if (credentialsAreCorrect) {
         [self.secureView setHidden:NO];
         [self.authButton setEnabled:NO];
         [self.authButton setAlpha:0.5];
-    } else {
-        if (!loginIsCorrect) {
-            [self.loginTextField setState:@"error"];
-        }
-        if (!passwordIsCorrect) {
-            [self.passwordTextField setState:@"error"];
-        }
+        [self.loginTextField setEnabled:NO];
+        [self.loginTextField setAlpha:0.5];
+        [self.passwordTextField setEnabled:NO];
+        [self.passwordTextField setAlpha:0.5];
     }
 }
 
