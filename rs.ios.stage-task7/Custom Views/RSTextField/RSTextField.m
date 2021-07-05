@@ -18,6 +18,7 @@
 - (void)configure {
     [self.layer setCornerRadius:5];
     [self.layer setBorderWidth:1.5];
+    [self setTextContentType:UITextContentTypeOneTimeCode];
 }
 
 - (void)setState:(NSString *)state {

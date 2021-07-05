@@ -71,7 +71,6 @@
 
 //MARK: Authorize
 - (IBAction)loginButtonTapped:(UIButton *)sender forEvent:(UIEvent *)event {
-    [self hideKeyboard];
     CGPoint touchLocation = [[[event allTouches] anyObject] locationInView:sender];
     if (CGRectContainsPoint(sender.bounds, touchLocation)) {
         [self authorize];
@@ -98,11 +97,13 @@
     
     if (credentialsAreCorrect) {
         [self.secureView setHidden:NO];
+        
         [self.authButton setEnabled:NO];
-        [self.authButton setAlpha:0.5];
         [self.loginTextField setEnabled:NO];
-        [self.loginTextField setAlpha:0.5];
         [self.passwordTextField setEnabled:NO];
+        
+        [self.authButton setAlpha:0.5];
+        [self.loginTextField setAlpha:0.5];
         [self.passwordTextField setAlpha:0.5];
     }
 }

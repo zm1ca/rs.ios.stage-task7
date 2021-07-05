@@ -42,7 +42,7 @@
                         <constraint firstAttribute="width" constant="303" id="FgO-C1-Tfv"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="username"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                     <connections>
                         <action selector="editingDidBegin:" destination="-1" eventType="editingDidBegin" id="snm-af-4xx"/>
                     </connections>
@@ -54,7 +54,7 @@
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="303" id="TN4-Cc-NP5"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                     <connections>
                         <action selector="editingDidBegin:" destination="-1" eventType="editingDidBegin" id="DEW-MK-Rmx"/>
                     </connections>
